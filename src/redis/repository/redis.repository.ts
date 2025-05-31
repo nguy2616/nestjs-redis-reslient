@@ -56,16 +56,16 @@ export class RedisRepository
     }
   }
 
-  async keys(pattern: string) {
+  async getKeysByPattern(pattern: string) {
     try {
       if (this.redisClient.status !== 'ready') {
         await this.redisClient.connect();
       }
-      const matchingKeys: string[] = [];
+      const matchinggetKeysByPattern: string[] = [];
       let cursor = '0';
 
       do {
-        const [nextCursor, keys] = await this.redisClient.scan(
+        const [nextCursor, getKeysByPattern] = await this.redisClient.scan(
           cursor,
           'MATCH',
           `*${pattern}*`,
@@ -73,10 +73,10 @@ export class RedisRepository
           100,
         );
         cursor = nextCursor;
-        matchingKeys.push(...keys);
+        matchinggetKeysByPattern.push(...getKeysByPattern);
       } while (cursor !== '0');
 
-      return matchingKeys;
+      return matchinggetKeysByPattern;
     } catch (error) {
       Logger.error(error);
       return [];

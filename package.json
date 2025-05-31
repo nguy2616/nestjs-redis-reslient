@@ -1,6 +1,6 @@
 {
   "name": "nestjs-redis-resilient",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A resilient Redis wrapper for NestJS with auto-reconnect and crash-safe features.",
   "author": "Cuong Nguyen",
   "license": "MIT",

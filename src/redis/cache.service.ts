@@ -18,7 +18,7 @@ export class CacheService {
   async del(redisKey: string) {
     return await this.cacheService.del(redisKey);
   }
-  async keys(pattern: string) {
-    return await this.cacheService.keys(pattern);
+  async getKeysByPattern(pattern: string) {
+    return await this.cacheService.getKeysByPattern(pattern);
   }
 }
