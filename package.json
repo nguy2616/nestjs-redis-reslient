@@ -1,11 +1,19 @@
 {
   "name": "nestjs-redis-resilient",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A resilient Redis wrapper for NestJS with auto-reconnect and crash-safe features.",
   "author": "Cuong Nguyen",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nguy2616/nestjs-redis-reslient.git"
+  },
+  "homepage": "https://github.com/nguy2616/nestjs-redis-reslient",
+  "bugs": {
+    "url": "https://github.com/nguy2616/nestjs-redis-reslient/issues"
+  },
   "files": [
     "/dist"
   ],

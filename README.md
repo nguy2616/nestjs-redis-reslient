@@ -46,6 +46,35 @@ export class ExampleService {
   }
 }
 
+## 🔧 Available Functions
+
+The `CacheService` provides the following methods:
+
+### `get(redisKey: string)`
+Retrieves a value from Redis by key.
+```typescript
+const value = await this.cacheService.get('my-key');
+```
+
+### `set<T>(redisKey: string, data: T, expiry?: number)`
+Sets a value in Redis with an optional expiry time (in seconds). If no expiry is provided, it uses the `REDIS_TTL` environment variable (default: 300 seconds).
+```typescript
+await this.cacheService.set('my-key', { foo: 'bar' });
+await this.cacheService.set('my-key', { foo: 'bar' }, 600); // 10 minutes
+```
+
+### `del(redisKey: string)`
+Deletes a key from Redis.
+```typescript
+await this.cacheService.del('my-key');
+```
+
+### `getKeysByPattern(pattern: string)`
+Retrieves all keys matching a pattern (supports Redis pattern matching).
+```typescript
+const keys = await this.cacheService.getKeysByPattern('user:*');
+```
+
 ⚙️ Environment Variables
 | Variable         | Description                    | Default     |
 | ---------------- | ------------------------------ | ----------- |
